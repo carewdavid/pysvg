@@ -6,4 +6,4 @@ class Line:
         self.endY = endY
         self.stroke = 'black'
     def draw(self):
-        print('<line x1="{}" y1="{}" x2="{}" y2="{}" stroke="{}" />')
+        print('<line x1="{}" y1="{}" x2="{}" y2="{}" stroke="{}" />'.format(self.startX, self.startY, self.endX, self.endY, self.stroke))

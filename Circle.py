@@ -7,4 +7,4 @@ class Circle:
         self.stroke = 'black'
 
     def draw(self):
-       print('<circle cx="{}" cy="{}" r="{}" stroke="{}" fill="{}"/>'.format(self.x, self.y, self.radius, self.stroke, self.fill) 
+       print('<circle cx="{}" cy="{}" r="{}" stroke="{}" fill="{}"/>'.format(self.x, self.y, self.radius, self.stroke, self.fill))
