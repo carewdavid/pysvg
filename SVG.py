@@ -1,4 +1,4 @@
-import Circle
+from . import Circle
 
 class SVG:
     def __init__(self, width, height):
@@ -11,7 +11,7 @@ class SVG:
         self.objs.append(circ)
 
     def draw(self):
-        print('<svg xmlns="http://www.w3.org/svg/2000" width="{}" height="{}">'.format(self.width, self.height))
+        print('<svg xmlns="http://www.w3.org/2000/svg" width="{}" height="{}">'.format(self.width, self.height))
         for object in self.objs:
             object.draw()
         print('</svg>')
