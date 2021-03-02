@@ -6,6 +6,10 @@ class SVG:
         self.height = height
         self.objs = []
 
+    def circle(self, x, y, radius):
+        circ = Circle.Circle(x, y, radius)
+        self.objs.append(circ)
+
     def draw(self):
         print('<svg xmlns="http://www.w3.org/svg/2000" width="{}" height="{}">'.format(self.width, self.height))
         for object in self.objs:
