@@ -6,6 +6,7 @@ class Rect:
         self.h = h
         self.fill = 'none'
         self.stroke = 'black'
+
     def draw(self):
         print('<rect x="{}" y="{}" width="{} height="{}" fill="{}" stroke="{}"/>'.format(self.x, self.y, self.w, self.h, self.fill, self.stroke, self.strokeWidth))
 
