@@ -32,4 +32,9 @@ class Path:
         """Draw a quadratic curve to (x,y) with control point (cx,cy)"""
         self.commands.append(f'Q {cx} {cy} {x} {y}')
         return self
+
+    def bezier(self, cx, cy, cx2, cy2, x, y):
+        """Draw a cubic curve relative to the last point"""
+        self.commands.append(f'c {cx} {cy} {cx2} {cy2} {x} {y}')
+        return self
     
