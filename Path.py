@@ -12,3 +12,9 @@ class Path:
         """Move to the given point"""
         self.commands.append(f'M {x} {y}')
         return self
+
+    def lineTo(self, x, y):
+        """Draw a line to the given point"""
+        self.commands.append(f'L {x} {y}')
+        return self
+
