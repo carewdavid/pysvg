@@ -2,6 +2,7 @@ from . import Circle
 from . import Rect
 from . import Ellipse
 from . import Line
+from . import Path
 
 class SVG:
     def __init__(self, width, height):
@@ -27,6 +28,11 @@ class SVG:
         line = Line.Line(sx, sy, ex, ey)
         self.objs.append(line)
         return line
+
+    def path(self, x, y):
+        path = Path.Path(x, y)
+        self.objs.append(path)
+        return path
 
     def draw(self):
         print('<svg xmlns="http://www.w3.org/2000/svg" width="{}" height="{}">'.format(self.width, self.height))
