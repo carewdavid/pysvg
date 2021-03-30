@@ -6,5 +6,5 @@ class Circle:
         self.fill = 'none'
         self.stroke = 'black'
 
-    def draw(self):
-       print('<circle cx="{}" cy="{}" r="{}" stroke="{}" fill="{}"/>'.format(self.x, self.y, self.radius, self.stroke, self.fill))
+    def draw(self, output):
+       output.write('<circle cx="{}" cy="{}" r="{}" stroke="{}" fill="{}"/>'.format(self.x, self.y, self.radius, self.stroke, self.fill))

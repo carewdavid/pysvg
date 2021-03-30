@@ -43,7 +43,7 @@ class Path:
         self.commands.append(f'C {cx} {cy} {cx2} {cy2} {x} {y}')
         return self
 
-    def draw(self):
+    def draw(self, output):
         data = "".join(self.commands)
-        print(f'<path d="{data}"/>')
+        output.write(f'<path d="{data}"/>')
     

@@ -7,5 +7,5 @@ class Ellipse:
         self.fill = 'none'
         self.stroke = 'black'
 
-    def draw(self):
-        print('<ellipse cx="{}" cy="{}" rx="{}" ry="{}" fill="{}" stroke="{}"/>'.format(self.x, self.y, self.minR, self.majR, self.fill, self.stroke))
+    def draw(self, output):
+        output.write('<ellipse cx="{}" cy="{}" rx="{}" ry="{}" fill="{}" stroke="{}"/>'.format(self.x, self.y, self.minR, self.majR, self.fill, self.stroke))

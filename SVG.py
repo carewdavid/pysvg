@@ -1,3 +1,4 @@
+import sys
 from . import Circle
 from . import Rect
 from . import Ellipse
@@ -5,10 +6,12 @@ from . import Line
 from . import Path
 
 class SVG:
-    def __init__(self, width, height):
+    def __init__(self, width, height, output=sys.stdout):
+
         self.width = width
         self.height = height
         self.objs = []
+        self.output = output
 
     def circle(self, x, y, radius):
         circ = Circle.Circle(x, y, radius)
@@ -35,7 +38,7 @@ class SVG:
         return path
 
     def draw(self):
-        print('<svg xmlns="http://www.w3.org/2000/svg" width="{}" height="{}">'.format(self.width, self.height))
+        self.output.write('<svg xmlns="http://www.w3.org/2000/svg" width="{}" height="{}">'.format(self.width, self.height))
         for object in self.objs:
-            object.draw()
-        print('</svg>')
+            object.draw(output)
+        self.output.write('</svg>\n')
