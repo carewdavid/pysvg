@@ -13,6 +13,11 @@ class Path:
         self.commands.append(f'M {x} {y}')
         return self
 
+    def line(self, x, y):
+        """Draw a line relative to the last point"""
+        self.commands.append(f'l {x} {y}')
+        return self
+
     def lineTo(self, x, y):
         """Draw a line to the given point"""
         self.commands.append(f'L {x} {y}')
