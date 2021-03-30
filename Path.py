@@ -8,7 +8,7 @@ class Path:
         self.commands.append(f'm {x} {y}')
         return self
 
-    def move(self, x, y):
+    def moveTo(self, x, y):
         """Move to the given point"""
         self.commands.append(f'M {x} {y}')
         return self
