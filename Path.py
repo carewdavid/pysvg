@@ -45,5 +45,5 @@ class Path:
 
     def draw(self):
         data = "".join(self.commands)
-        print('<path d="{data}"/>')
+        print(f'<path d="{data}"/>')
     
