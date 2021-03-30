@@ -42,4 +42,8 @@ class Path:
         """Draw a cubic curve to (x,y) with control points (cx,cy) and (cx2,cy2)"""
         self.commands.append(f'C {cx} {cy} {cx2} {cy2} {x} {y}')
         return self
+
+    def draw(self):
+        data = "".join(self.commands)
+        print('<path d="{data}"/>')
     
