@@ -19,12 +19,12 @@ class SVG:
         self.objs.append(rect)
         return rect
 
-    def Ellipse(self, x, y, rx, ry):
+    def ellipse(self, x, y, rx, ry):
         ell = Ellipse.Ellipse(x, y, rx, ry)
         self.objs.append(ell)
         return ell
 
-    def Line(self, sx, sy, ex, ey):
+    def line(self, sx, sy, ex, ey):
         line = Line.Line(sx, sy, ex, ey)
         self.objs.append(line)
         return line
