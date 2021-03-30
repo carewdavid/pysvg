@@ -23,3 +23,8 @@ class Path:
         self.commands.append(f'L {x} {y}')
         return self
 
+    def curve(self, cx, cy, x, y)
+        """Draw a quadratic curve relative to the last point"""
+        self.commands.append(f'q {cx} {cy} {x} {y}')
+        return self
+    
