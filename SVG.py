@@ -40,5 +40,5 @@ class SVG:
     def draw(self):
         self.output.write('<svg xmlns="http://www.w3.org/2000/svg" width="{}" height="{}">'.format(self.width, self.height))
         for object in self.objs:
-            object.draw(output)
-        self.output.write('</svg>\n')
+            object.draw(self.output)
+        self.output.write('</svg>')
