@@ -38,12 +38,12 @@ class Path:
         self.commands.append(f'c {cx} {cy} {cx2} {cy2} {x} {y}')
         return self
 
-    def bezier(self, cx, cy, cx2, cy2, x, y):
+    def bezierTo(self, cx, cy, cx2, cy2, x, y):
         """Draw a cubic curve to (x,y) with control points (cx,cy) and (cx2,cy2)"""
         self.commands.append(f'C {cx} {cy} {cx2} {cy2} {x} {y}')
         return self
 
     def draw(self, output):
         data = "".join(self.commands)
-        output.write(f'<path d="{data}"/>')
+        output.write(f'<path fill="none" stroke="black" d="{data}"/>')
     
