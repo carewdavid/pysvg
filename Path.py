@@ -43,6 +43,10 @@ class Path:
         self.commands.append(f'C {cx} {cy} {cx2} {cy2} {x} {y}')
         return self
 
+    def close(self):
+        """Draw a straight line back to the beginning of the path"""
+        self.commands.append("Z")
+
     def draw(self, output):
         data = "".join(self.commands)
         output.write(f'<path fill="none" stroke="black" d="{data}"/>')
