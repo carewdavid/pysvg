@@ -16,6 +16,7 @@ class SVG:
     def circle(self, x, y, radius):
         circ = Circle.Circle(x, y, radius)
         self.objs.append(circ)
+        return circ
 
     def rect(self, x, y, w, h):
         rect = Rectangle.Rectangle(x, y, w, h)
