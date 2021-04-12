@@ -37,8 +37,28 @@ class SVG:
         self.objs.append(path)
         return path
 
+    def group(self, name=None):
+        group = Group(name)
+        self.objs.append(group)
+        return group
+
     def draw(self):
         self.output.write('<svg xmlns="http://www.w3.org/2000/svg" width="{}" height="{}">'.format(self.width, self.height))
         for object in self.objs:
             object.draw(self.output)
         self.output.write('</svg>')
+
+class Group(SVG):
+    def __init__(self, name=None):
+        self.objs = []
+
+        if name:
+            self.name = name
+        else:
+            name = ''
+
+    def draw(self, output):
+        output.write(f'<g id="{self.name}">')
+        for object in self.objs:
+            object.draw(output)
+        output.write('</g>')
