@@ -8,5 +8,5 @@ class Rect:
         self.stroke = 'black'
 
     def draw(self, output):
-        output.write('<rect x="{}" y="{}" width="{} height="{}" fill="{}" stroke="{}"/>'.format(self.x, self.y, self.w, self.h, self.fill, self.stroke, self.strokeWidth))
+        output.write('<rect x="{}" y="{}" width="{}" height="{}" fill="{}" stroke="{}"/>'.format(self.x, self.y, self.w, self.h, self.fill, self.stroke, self.strokeWidth))
 
