@@ -19,7 +19,7 @@ class SVG:
         return circ
 
     def rect(self, x, y, w, h):
-        rect = Rectangle.Rectangle(x, y, w, h)
+        rect = Rect.Rect(x, y, w, h)
         self.objs.append(rect)
         return rect
 
