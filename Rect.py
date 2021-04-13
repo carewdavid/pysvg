@@ -1,5 +1,5 @@
 class Rect:
-    def __init__(x, y, w, h):
+    def __init__(self, x, y, w, h):
         self.x = x
         self.y = y
         self.w = w
