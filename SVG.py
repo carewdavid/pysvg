@@ -43,11 +43,12 @@ class SVG:
         self.objs.append(group)
         return group
 
-    def draw(self):
-        self.output.write('<svg xmlns="http://www.w3.org/2000/svg" width="{}" height="{}">'.format(self.width, self.height))
+    def draw(self, out=None):
+        output = out or self.output
+        output.write('<svg xmlns="http://www.w3.org/2000/svg" width="{}" height="{}">'.format(self.width, self.height))
         for object in self.objs:
-            object.draw(self.output)
-        self.output.write('</svg>')
+            object.draw(output)
+        output.write('</svg>')
 
 class Group(SVG):
     def __init__(self, name=None):
