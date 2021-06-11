@@ -45,7 +45,7 @@ class SVG:
 
     def draw(self, out=None):
         output = out or self.output
-        output.write('<svg xmlns="http://www.w3.org/2000/svg" width="{}" height="{}">'.format(self.width, self.height))
+        output.write('<svg xmlns="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="{}" height="{}">'.format(self.width, self.height))
         for object in self.objs:
             object.draw(output)
         output.write('</svg>')
@@ -60,7 +60,7 @@ class Group(SVG):
             name = ''
 
     def draw(self, output):
-        output.write(f'<g id="{self.name}">')
+        output.write(f'<g inkscape:groupmode="layer" inkscape:label="{self.name}" id="{self.name}">')
         for object in self.objs:
             object.draw(output)
         output.write('</g>')
