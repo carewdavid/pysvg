@@ -1,7 +1,11 @@
-class Path:
+from . import Shape
+
+class Path(Shape.Shape):
     def __init__(self, x, y):
-       self.commands = [] 
-       self.moveTo(x, y)
+        super.__init__()
+        self.stroke('black')
+        self.commands = [] 
+        self.moveTo(x, y)
 
     def move(self, x, y):
         """Move relative to the last point"""
@@ -49,5 +53,5 @@ class Path:
 
     def draw(self, output):
         data = "".join(self.commands)
-        output.write(f'<path fill="none" stroke="black" d="{data}"/>')
+        output.write(f'<path fill="none" {self.props()} d="{data}"/>')
     
