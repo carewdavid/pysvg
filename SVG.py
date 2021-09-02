@@ -65,7 +65,7 @@ class Group(SVG):
             y = x
         self.attrs["transform"] = f'{self.attrs.get("transform", "")} {scale(x, y)}'
 
-    def scale(self, x, y=0):
+    def translate(self, x, y=0):
         self.attrs["transform"] = f'{self.attrs.get("transform", "")} {translate(x, y)}'
 
     def rotate(self, angle, x=0, y=0):
