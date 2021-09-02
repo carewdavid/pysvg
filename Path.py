@@ -4,6 +4,7 @@ class Path(Shape.Shape):
     def __init__(self, x, y):
         super().__init__()
         self.stroke('black')
+        self.fill('none')
         self.commands = [] 
         self.moveTo(x, y)
 
@@ -54,5 +55,5 @@ class Path(Shape.Shape):
 
     def draw(self, output):
         data = "".join(self.commands)
-        output.write(f'<path fill="none" {self.props()} d="{data}"/>')
+        output.write(f'<path {self.props()} d="{data}"/>')
     
