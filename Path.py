@@ -50,6 +50,7 @@ class Path(Shape.Shape):
     def close(self):
         """Draw a straight line back to the beginning of the path"""
         self.commands.append("Z")
+        return self
 
     def draw(self, output):
         data = "".join(self.commands)
