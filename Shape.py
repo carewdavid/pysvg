@@ -15,5 +15,10 @@ class Shape:
         self.attrs["stroke-width"] = strokeWidth
         return self
 
+    def addAttribute(self, attrName, attrValue):
+        """Add a generic attribute to the object."""
+        self.attrs[attrName] = attrValue
+        return self
+
     def props(self):
         return " ".join([f'{k}="{v}"' for k, v in self.attrs.items()])
