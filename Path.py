@@ -2,7 +2,7 @@ from . import Shape
 
 class Path(Shape.Shape):
     def __init__(self, x, y):
-        super.__init__()
+        super().__init__()
         self.stroke('black')
         self.commands = [] 
         self.moveTo(x, y)
