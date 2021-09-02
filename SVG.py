@@ -53,11 +53,23 @@ class SVG:
 class Group(SVG):
     def __init__(self, name=None):
         self.objs = []
+        self.attrs = {}
 
         if name:
             self.name = name
         else:
             name = ''
+
+    def scale(self, x, y=None):
+        if y is None:
+            y = x
+        self.attrs["transform"] = f'{self.attrs.get("transform", "")} {scale(x, y)}'
+
+    def scale(self, x, y=0):
+        self.attrs["transform"] = f'{self.attrs.get("transform", "")} {translate(x, y)}'
+
+    def rotate(self, angle, x=0, y=0):
+        self.attrs["transform"] = f'{self.attrs.get("transform", "")} {rotate(a, x, y)}'
 
     def draw(self, output):
         output.write(f'<g inkscape:groupmode="layer" inkscape:label="{self.name}" id="{self.name}">')
