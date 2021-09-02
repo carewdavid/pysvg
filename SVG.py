@@ -74,8 +74,12 @@ class Group(SVG):
         self.attrs["transform"] = f'{self.attrs.get("transform", "")} rotate({a}, {x}, {y})'
         return self
 
+    def props(self):
+        #Is it time to just extend Shape yet?
+        return " ".join([f'{attribute}="{value}"' for attribute, value in self.attrs.items()])
+
     def draw(self, output):
-        output.write(f'<g inkscape:groupmode="layer" inkscape:label="{self.name}" id="{self.name}">')
+        output.write(f'<g inkscape:groupmode="layer" inkscape:label="{self.name}" id="{self.name}" "{self.props()}">')
         for object in self.objs:
             object.draw(output)
         output.write('</g>')
