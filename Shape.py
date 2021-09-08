@@ -15,6 +15,10 @@ class Shape:
         self.attrs["stroke-width"] = strokeWidth
         return self
 
+    def opacity(self, opacity):
+        """Set the opacity of the object. Number between 0 and 1.0"""
+        self.attrs["opacity"] = opacity
+
     def addAttribute(self, attrName, attrValue):
         """Add a generic attribute to the object."""
         self.attrs[attrName] = attrValue
