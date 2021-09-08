@@ -4,14 +4,17 @@ class Shape:
         self.attrs = {}
 
     def fill(self, fillColor):
+        """Set fill style"""
         self.attrs["fill"] = fillColor
         return self
 
     def stroke(self, strokeColor):
+        """Set stroke style"""
         self.attrs["stroke"] = strokeColor
         return self
 
     def strokeWidth(self, strokeWidth):
+        """Set stroke width in px"""
         self.attrs["stroke-width"] = strokeWidth
         return self
 
@@ -25,4 +28,5 @@ class Shape:
         return self
 
     def props(self):
+        """Render a collection of attributes"""
         return " ".join([f'{k}="{v}"' for k, v in self.attrs.items()])
