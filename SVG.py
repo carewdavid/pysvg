@@ -4,6 +4,7 @@ from . import Rect
 from . import Ellipse
 from . import Line
 from . import Path
+from . import Filter
 
 class SVG:
     def __init__(self, width, height, output=sys.stdout):
@@ -42,6 +43,11 @@ class SVG:
         group = Group(name)
         self.objs.append(group)
         return group
+
+    def filter(self, name):
+        filt = Filter.Filter(name)
+        self.objs.append(filt)
+        return filt
 
     def draw(self, out=None):
         output = out or self.output
