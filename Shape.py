@@ -21,10 +21,12 @@ class Shape:
     def opacity(self, opacity):
         """Set the opacity of the object. Number between 0 and 1.0"""
         self.attrs["opacity"] = opacity
+        return self
 
     def filter(self, filt):
         """Add a filter to the object"""
         self.attrs["filter"] = filt
+        return self
 
     def addAttribute(self, attrName, attrValue):
         """Add a generic attribute to the object."""
