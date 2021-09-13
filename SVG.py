@@ -6,6 +6,14 @@ from . import Line
 from . import Path
 from . import Filter
 
+INCH = 96
+FOOT = INCH * 12
+MILE = FOOT * 5280
+CENTIMETER = 37.795
+MILLIMETER = CENTIMETER * .1
+METER = CENTIMETER * 100
+KILOMETER = METER * 1000
+
 class SVG:
     def __init__(self, width, height, output=sys.stdout):
 
