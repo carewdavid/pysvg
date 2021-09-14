@@ -9,5 +9,5 @@ class Rect(Shape.Shape):
         self.h = h
 
     def draw(self, output):
-        output.write('<rect x="{}" y="{}" width="{}" height="{}" {}/>'.format(self.x, self.y, self.w, self.h, self.props()))
+        output.write(f'<rect x="{self.x}" y="{self.y}" width="{self.w}" height="{self.h}" {self.props()}/>')
 

@@ -9,4 +9,4 @@ class Line(Shape.Shape):
         self.endY = endY
 
     def draw(self, output):
-        output.write('<line x1="{}" y1="{}" x2="{}" y2="{}" {} />'.format(self.startX, self.startY, self.endX, self.endY, self.props()))
+        output.write(f'<line x1="{self.startX}" y1="{self.startY}" x2="{self.endX}" y2="{self.endY}" {self.props()} />')
