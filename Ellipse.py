@@ -1,5 +1,7 @@
-class Ellipse:
+from . import Shape
+class Ellipse(Shape.Shape):
     def __init__(self, x, y, minorRadius, majorRadius):
+        super().__init__()
         self.x = x
         self.y = y
         self.minR = minorRadius
