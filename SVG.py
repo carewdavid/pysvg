@@ -14,6 +14,11 @@ MILLIMETER = CENTIMETER * .1
 METER = CENTIMETER * 100
 KILOMETER = METER * 1000
 
+LETTER = (8.5 * INCH, 11 * INCH)
+#TODO Check postcard size
+A4 = (21 * CENTIMETER, 29.7 * CENTIMETER)
+A3 = (29.7 * CENTIMETER, 42 * CENTIMETER)
+
 class SVG:
     def __init__(self, width, height, output=sys.stdout):
 
