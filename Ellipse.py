@@ -8,4 +8,4 @@ class Ellipse:
         self.stroke = 'black'
 
     def draw(self, output):
-        output.write(f'<ellipse cx="{self.x}" cy="{self.y}" rx="{self.minR}" ry="{self.majR}" {self.props()} />')
+        output.write(f'<ellipse cx="{self.x:.3f}" cy="{self.y:.3f}" rx="{self.minR:.3f}" ry="{self.majR:.3f}" {self.props()} />')

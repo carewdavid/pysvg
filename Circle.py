@@ -10,4 +10,4 @@ class Circle(Shape.Shape):
         self.stroke = 'black'
 
     def draw(self, output):
-        output.write(f'<circle cx="{self.x}" cy="{self.y}" r="{self.radius}" {self.props()}/>')
+        output.write(f'<circle cx="{self.x:.3f}" cy="{self.y:.3f}" r="{self.radius:.3f}" {self.props()}/>')
