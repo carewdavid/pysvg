@@ -7,6 +7,8 @@ class Rect(Shape.Shape):
         self.y = y
         self.w = w
         self.h = h
+        self.fill('none')
+        self.stroke('black')
 
     def draw(self, output):
         output.write(f'<rect x="{self.x:.3f}" y="{self.y:.3f}" width="{self.w:.3f}" height="{self.h:.3f}" {self.props()}/>')
