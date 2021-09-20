@@ -28,6 +28,23 @@ class Shape:
         self.attrs["filter"] = filt
         return self
 
+    def translate(self, dx, dy):
+        """Translate the object by (dx, dy)"""
+        self.attrs["transform"] = f'{self.attrs.get("transform", "")} translate({dx},{dy})'
+        return self
+
+    def scale(self, sx, sy=None):
+        """Scale the object"""
+        if sy is None:
+            sy=sx
+        self.attrs["transform"] = f'{self.attrs.get("transform", "")} scale({sx},{sy})'
+        return self
+
+    def rotate(self, angle, x=0, y=0):
+        """Rotate the object `angle` radians around (x,y)"""
+        self.attrs["transform"] = f'{self.attrs.get("transform", "")} rotate({x},{y}, {180/3.1415926 * angle})'
+        return self
+
     def addAttribute(self, attrName, attrValue):
         """Add a generic attribute to the object."""
         self.attrs[attrName] = attrValue
