@@ -4,14 +4,22 @@ class Filter:
         self.primitives = []
 
     def blur(self, stdDev):
-        primitive = f'<feGaussianBlur stdDeviation="{stdDev}"/>'
+        primitive = GaussianBlur(stdDev)
         self.primitives.append(primitive)
-        return self
+        return primitive
 
     def use(self):
         return f'url(#{self.id})'
 
     def draw(self, output):
-        components = "".join(self.primitives)
-        output.write(f'<filter id="{self.id}"> {components} </filter>')
+        output.write('<filter>')
+        for primitive in self.primitives:
+            primitive.draw(output)
+        output.write('</filter>')
 
+class GaussianBlur:
+    def __init__(self, stdDev):
+        self.stdDev = stdDev
+
+    def draw(self, output):
+        output.write(f'<feGaussianBlur stdDeviation="{self.stdDev}"/>')
