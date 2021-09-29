@@ -42,7 +42,7 @@ class Shape:
 
     def rotate(self, angle, x=0, y=0):
         """Rotate the object `angle` radians around (x,y)"""
-        self.attrs["transform"] = f'{self.attrs.get("transform", "")} rotate({x},{y}, {180/3.1415926 * angle})'
+        self.attrs["transform"] = f'{self.attrs.get("transform", "")} rotate({180/3.1415926 * angle}, {x}, {y})'
         return self
 
     def addAttribute(self, attrName, attrValue):

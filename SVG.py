@@ -90,7 +90,7 @@ class Group(SVG):
         return self
 
     def rotate(self, angle, x=0, y=0):
-        self.attrs["transform"] = f'{self.attrs.get("transform", "")} rotate({a}, {x}, {y})'
+        self.attrs["transform"] = f'{self.attrs.get("transform", "")} rotate({angle}, {x}, {y})'
         return self
 
     def props(self):
