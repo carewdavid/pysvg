@@ -6,8 +6,8 @@ class Ellipse(Shape.Shape):
         self.y = y
         self.minR = minorRadius
         self.majR = majorRadius
-        self.fill = 'none'
-        self.stroke = 'black'
+        self.fill('none')
+        self.stroke('black')
 
     def draw(self, output):
         output.write(f'<ellipse cx="{self.x:.3f}" cy="{self.y:.3f}" rx="{self.minR:.3f}" ry="{self.majR:.3f}" {self.props()} />')
