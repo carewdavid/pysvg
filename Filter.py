@@ -12,7 +12,7 @@ class Filter:
         return f'url(#{self.id})'
 
     def draw(self, output):
-        output.write('<filter>')
+        output.write(f'<filter id="{self.id}">')
         for primitive in self.primitives:
             primitive.draw(output)
         output.write('</filter>')
