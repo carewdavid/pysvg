@@ -8,6 +8,11 @@ class Filter:
         self.primitives.append(primitive)
         return primitive
 
+    def blend(self, mode):
+        primitive = Blend(mode)
+        self.primitives.append(primitive)
+        return primitive
+
     def use(self):
         return f'url(#{self.id})'
 
@@ -23,3 +28,14 @@ class GaussianBlur:
 
     def draw(self, output):
         output.write(f'<feGaussianBlur stdDeviation="{self.stdDev}"/>')
+
+class Blend:
+    def __init__(self, mode, source1="SourceGraphic", source2="BackgroundImage"):
+        """Blend source1 and source2
+        mode must be one of 'normal', 'screen', 'multiply', 'darken'"""
+        self.source1 = source1
+        self.source2 = source2
+        self.mode = mode
+
+    def draw(self, output):
+        output.write(f'<feBlend mode="{self.mode}" in="{self.source1}" in2="{self.source2}"/>')
